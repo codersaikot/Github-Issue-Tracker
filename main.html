@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Issues</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+<div class="bg-white shadow p-4 flex justify-between items-center">
+  <h2 class="font-bold text-lg">GitHub Issues Tracker</h2>
+
+  <div class="flex gap-2">
+    <input id="search" class="border px-3 py-1 rounded" placeholder="Search issues...">
+    <button onclick="searchIssues()" class="bg-purple-600 text-white px-4 py-1 rounded">Search</button>
+  </div>
+</div>
+
+<!-- Tabs -->
+<div class="p-4">
+  <div class="bg-white p-4 rounded shadow flex gap-2">
+    <button onclick="filterIssues('all')" class="px-4 py-1 bg-purple-600 text-white rounded">All</button>
+    <button onclick="filterIssues('open')" class="px-4 py-1 border rounded">Open</button>
+    <button onclick="filterIssues('closed')" class="px-4 py-1 border rounded">Closed</button>
+  </div>
+</div>
+
+<!-- Loader -->
+<div id="loader" class="text-center hidden">Loading...</div>
+
+<!-- Cards -->
+<div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4"></div>
+
+<!-- Modal -->
+<div id="modal" class="fixed inset-0 bg-black bg-opacity-40 hidden flex justify-center items-center">
+  <div class="bg-white p-6 rounded w-96">
+    <h3 id="modal-title" class="font-bold text-lg mb-2"></h3>
+    <p id="modal-desc" class="text-gray-600 mb-4"></p>
+    <button onclick="closeModal()" class="bg-purple-600 text-white px-4 py-2 rounded">Close</button>
+  </div>
+</div>
+
+<script src="./js/script.js"></script>
+</body>
+</html>
