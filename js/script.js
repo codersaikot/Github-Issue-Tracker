@@ -57,6 +57,7 @@ function displayIssues(issues) {
   });
 }
 
+
 // FILTER
 function filterIssues(type) {
   if (type === "all") return loadIssues();
